@@ -7,6 +7,8 @@ var app = require('koa')()
 var session = require('koa-session');
 var index = require('./routes/index');
 var users = require('./routes/users');
+var articles = require('./routes/articles.js');
+var admin = require('./routes/admin.js')
 var check = require('./middleware/checklogin.js')
 require('./db/connect.js')
 // global middlewares
@@ -18,7 +20,7 @@ app.use(session(app));
 app.use(require('koa-bodyparser')());
 app.use(json());
 app.use(logger());
-app.use(check)
+// app.use(check)
 app.use(function *(next){
   var start = new Date;
   yield next;
@@ -31,7 +33,8 @@ app.use(require('koa-static')(__dirname + '/public'));
 // routes definition
 koa.use('/', index.routes(), index.allowedMethods());
 koa.use('/users', users.routes(), users.allowedMethods());
-
+koa.use('/articles', articles.routes(), articles.allowedMethods());
+koa.use('/admin', admin.routes(), admin.allowedMethods());
 // mount root routes  
 app.use(koa.routes());
 

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>smartHxc狗太管理系统</title>
+	<style type="text/css">
+		html,body{
+			margin: 0;
+			padding: 0;
+			height: 100%;
+			width: 100%;
+			overflow: hidden;
+			background-color: #000;
+		}
+		.title{
+			text-align: center;
+			margin: 100px 0;
+			color: #fff;
+			font-size: 60px
+		}
+		.login-panle{
+			width: 400px;
+			height:400px;
+			background-color: #fff;
+			margin: 0 auto;
+			border-radius: 5px;
+		}
+		.admin-login-title{
+			margin: 0;
+			text-align: center;
+			padding: 20px 0;
+		}
+		.acount-input-row{
+			padding: 40px 20px;
+		}
+		.email,.password{
+			display: flex;
+			display: -webkit-flex;
+		}
+		.left-title{
+			text-align: center;
+			line-height: 50px;
+			flex: 1;
+		}
+		.right-input{
+			flex: 4;
+		}
+		.right-input input{
+			height: 50px;
+			border:0;
+			outline: none;
+			width: 100%;
+			line-height: 50px;
+		}
+		.ui-border-b{
+			border-bottom: 1px solid #ccc;
+		}
+		.login-btn{
+			padding: 0 20px;
+			text-align: center;
+		}
+		.login-btn button{
+			width: 100%;
+			height: 40px;
+			border:0;
+			cursor: pointer;
+			border-radius: 5px;
+			outline: none;
+		}
+	</style>
+</head>
+<body>
+	<h1 class="title">blogMe</h1>
+	<div class="login-panle">
+		<h3 class="admin-login-title">管理员登录</h3>
+		<div class="acount-input-row">
+			<div class="email ui-border-b">
+				<div class="left-title">邮箱</div>
+				<div class="right-input">
+					<input type="text" placeholder="邮箱" name="" class="email-t">
+				</div>
+			</div>
+			<div class="password">
+				<div class="left-title">密码</div>
+				<div class="right-input">
+					<input type="password" placeholder="密码" name="" class="password-t">
+				</div>
+			</div>
+		</div>	
+		<div class="login-btn">
+			<button>登录</button>
+		</div>
+	</div>
+	<script src='http://apps.bdimg.com/libs/jquery/1.8.1/jquery.min.js'></script>
+	<script type="text/javascript" src="../javascripts/config/config.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('.login-btn').on('click','button',function(){
+				$.ajax({
+					url:BASEURL+'/admin/login',
+					type:'POST',
+					data:{
+						email:$('.email-t').val(),
+						password:$('.password-t').val()
+					},
+					success:function(data){
+						alert(JSON.stringify(data))
+					},
+					error:function(err){
+
+					}
+				})
+			})
+		})
+	</script>
+</body>
+</html>
