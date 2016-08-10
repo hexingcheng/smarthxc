@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>main</title>
+    <style type="text/css">
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        
+        .article-info {
+            padding: 20px;
+            border-bottom: 1px dashed #ccc
+        }
+        
+        .article-info .info-title {
+            padding: 10px 0;
+        }
+        
+        .article-info .info-panle {
+            border: 1px solid #ccc;
+            padding-left: 20px;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .article-info .info-panle .info-input {
+            display: block;
+            outline: none;
+            height: 40px;
+            border: 0;
+            width: 100%;
+        }
+        
+        .article-info .checkbox-panle {
+            padding-left: 0;
+            border: none;
+        }
+        
+        .article-info .info-panle .checkboxs {
+            vertical-align: bottom;
+            margin-right: 10px
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrap">
+        <div class="add-panle">
+            <div class="article-info">
+                <div class="info-title">文章标题</div>
+                <div class="info-panle">
+                    <input type="text" placeholder="请输入文章标题" class="info-input">
+                </div>
+            </div>
+            <div class="article-info">
+                <div class="info-title">文章概要</div>
+                <div class="info-panle">
+                    <input type="text" placeholder="请输入文章概要，至少50字" minlength="50" class="info-input">
+                </div>
+            </div>
+            <div class="article-info">
+                <div class="info-title">标签</div>
+                <div class="info-panle checkbox-panle">
+                    <label for="html">html</label>
+                    <input type="checkbox" id="html" class="checkboxs">
+                    <label for="html">javascript</label>
+                    <input type="checkbox" id="javascript" class="checkboxs">
+                    <label for="html">css</label>
+                    <input type="checkbox" id="css" class="checkboxs">
+                    <label for="html">nodejs</label>
+                    <input type="checkbox" id="nodejs" class="checkboxs">
+                    <label for="html">数据库</label>
+                    <input type="checkbox" id="dababase" class="checkboxs">
+                    <label for="html">其他</label>
+                    <input type="checkbox" id="other" class="checkboxs">
+                </div>
+            </div>
+            <div class="article-info">
+                <div class="info-title">文章内容</div>
+                <div class="info-panle">
+                    <input type="text" placeholder="请输入文章概要，至少50字" minlength="50" class="info-input">
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src='http://apps.bdimg.com/libs/jquery/1.8.1/jquery.min.js'></script>
+    <script src="../javascripts/lib/vue.js"></script>
+    <script type="text/javascript" src="../javascripts/config/config.js"></script>
+    <script type="text/javascript">
+    </script>
+</body>
+
+</html>
